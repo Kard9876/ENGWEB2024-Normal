@@ -1,0 +1,21 @@
+version: "1"
+services:
+    mongo_db:
+        build: ./ex1/mongo_db
+        container_name: engweb2024_test_mongodb
+
+    data_api:
+        build: ./ex1/data_api
+        container_name: engweb2024_test_data_api
+        depends_on:
+            - mongo_db
+        ports:
+            - "16000:16000"
+
+    html_server:
+        build: ./ex2
+        container_name: engweb2024_test_html_server
+        depends_on:
+            - data_api
+        ports:
+            - "16001:16001"

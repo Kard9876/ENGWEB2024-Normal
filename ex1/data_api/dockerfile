@@ -1,0 +1,13 @@
+from node
+
+workdir /app
+
+copy package.json .
+
+run npm install
+
+copy . .
+
+expose 16000
+
+cmd ["npm", "start"]

@@ -1,0 +1,5 @@
+from mongo
+
+copy contratos2024.json /tmp/contratos2024.json
+
+# mongoimport -d contratos -c contratos --file /tmp/contratos2024.json --jsonArray

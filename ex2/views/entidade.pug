@@ -1,0 +1,46 @@
+extends layout 
+
+block content 
+    .w3-row.flex-box
+
+        .w3-quarter.flex-box.flex-center.w3-blue-grey.full-height-div
+            .flex-box.flex-center.flex-column
+                a.w3-center(href="/") Voltar
+            
+        header.w3-half.w3-container.w3-blue-grey.w3-center
+            h3= title
+
+        .w3-quarter.flex-box.flex-center.w3-blue-grey.full-height-div
+
+    main.w3-margin.w3-padding
+        p
+            b Nome
+            | : #{entidade.nome}
+
+        p
+            b NIPC
+            | : #{entidade.NIPC}
+
+        p
+            b Somatório dos valores dos contratos
+            | : #{sum}
+
+        .flex-box.flex-center
+            table.w3-table-all
+                tr 
+                    th idcontrato
+                    th objectoContrato
+                    th dataCelebracaoContrato
+                    th precoContratual
+
+                each c in contratos
+                    tr
+                        td
+                            a(href=`/${c._id}`)=c._id
+                        td=c.objectoContrato
+                        td=c.dataCelebracaoContrato
+                        td=c.precoContratual
+
+    footer.w3-container.w3-blue-grey
+            a.w3-center(href="/") [Voltar à página principal]
+            

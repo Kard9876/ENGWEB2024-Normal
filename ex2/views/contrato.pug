@@ -1,0 +1,62 @@
+extends layout 
+
+block content 
+    .w3-row.flex-box
+
+        .w3-quarter.flex-box.flex-center.w3-blue-grey.full-height-div
+            .flex-box.flex-center.flex-column
+                a.w3-center(href="/") Voltar
+            
+        header.w3-half.w3-container.w3-blue-grey.w3-center
+            h3= title
+
+        .w3-quarter.flex-box.flex-center.w3-blue-grey.full-height-div
+
+    main.w3-margin.w3-padding
+        p
+            b Id Contrato
+            | : #{contrato._id}
+
+        p
+            b Número Anúncio
+            | : #{contrato.nAnuncio}
+
+        p
+            b Tipo de Procedimento
+            | : #{contrato.tipoprocedimento}
+
+        p
+            b Objeto de Procedimento
+            | : #{contrato.objectoContrato}
+
+        p
+            b Data de Publicação
+            | : #{contrato.dataPublicacao}
+
+        p
+            b Data de Celebração do Contrato
+            | : #{contrato.dataCelebracaoContrato}
+
+        p
+            b Preço Contratual
+            | : #{contrato.precoContratual}
+
+        p
+            b Prazo de Execução
+            | : #{contrato.prazoExecucao}
+
+        p
+            b NIPC da Entidade Comunicante
+            | : #{contrato.NIPC_entidade_comunicante}
+
+        p
+            b Entidade Comunicante
+            | : #{contrato.entidade_comunicante}
+
+        p
+            b Fundamentação
+            | : #{contrato.fundamentacao}
+
+    footer.w3-container.w3-blue-grey
+            a.w3-center(href="/") [Voltar à página principal]
+            
